@@ -97,3 +97,24 @@ const getUniqueValues = <T extends string | number>(array1: T[], array2: T[]): T
 
   return result;
 };
+
+
+
+type Product = {
+  name: string;
+  price: number;
+  quantity: number;
+  discount?: number;
+};
+
+const calculateTotalPrice = (products: Product[]): number => {
+  if (products.length === 0) return 0;
+
+  const totals = products.map(p => {
+    const totalPrice = p.price * p.quantity;
+    const discountAmount = p.discount ? (totalPrice * p.discount) / 100 : 0;
+    return totalPrice - discountAmount;
+  });
+
+  return totals.reduce((sum, item) => sum + item, 0);
+};
