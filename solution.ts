@@ -39,3 +39,14 @@ class Person {
     return `'Name: ${this.name}, Age: ${this.age}'`;
   }
 }
+
+
+
+type RatedItem = {
+  title: string;
+  rating: number;
+};
+
+const filterByRating = (value: RatedItem[]): RatedItem[] => {
+  return value.filter(item => item.rating >= 4);
+};
