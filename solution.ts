@@ -58,7 +58,7 @@ type User = {
   name: string;
   email: string;
   isActive: boolean;
-}; 
+};
 
 const filterActiveUsers = (users: User[]): User[] => {
   return users.filter(user => user.isActive);
@@ -77,3 +77,23 @@ const printBookDetails = (book: Book): void => {
   const availability = book.isAvailable ? 'Yes' : 'No';
   console.log(`Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: ${availability}`);
 }
+
+
+
+const getUniqueValues = <T extends string | number>(array1: T[], array2: T[]): T[] => {
+  const result: T[] = [];
+
+  for (const item of array1) {
+    if (!result.includes(item)) {
+      result.push(item);
+    }
+  }
+
+  for (const item of array2) {
+    if (!result.includes(item)) {
+      result.push(item);
+    }
+  }
+
+  return result;
+};
