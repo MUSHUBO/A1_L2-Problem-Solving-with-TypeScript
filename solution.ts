@@ -36,6 +36,6 @@ class Person {
   }
 
   getDetails(): string {
-    return `name: ${this.name}, age: ${this.age}`;
+    return `'Name: ${this.name}, Age: ${this.age}'`;
   }
 }
