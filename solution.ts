@@ -22,4 +22,20 @@ function getLength(value: string | any[]): number {
   }
 
   return 0;
+};
+
+
+
+class Person {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  getDetails(): string {
+    return `name: ${this.name}, age: ${this.age}`;
+  }
 }
